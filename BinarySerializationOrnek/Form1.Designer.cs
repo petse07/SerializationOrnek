@@ -40,6 +40,7 @@
             this.maastextBox = new System.Windows.Forms.TextBox();
             this.serializedbutton = new System.Windows.Forms.Button();
             this.Sonuclabel = new System.Windows.Forms.Label();
+            this.deserializedbutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Adlabel
@@ -124,7 +125,7 @@
             // 
             // serializedbutton
             // 
-            this.serializedbutton.Location = new System.Drawing.Point(110, 344);
+            this.serializedbutton.Location = new System.Drawing.Point(43, 344);
             this.serializedbutton.Name = "serializedbutton";
             this.serializedbutton.Size = new System.Drawing.Size(154, 29);
             this.serializedbutton.TabIndex = 11;
@@ -142,11 +143,22 @@
             this.Sonuclabel.Text = "label1";
             this.Sonuclabel.Visible = false;
             // 
+            // deserializedbutton
+            // 
+            this.deserializedbutton.Location = new System.Drawing.Point(298, 344);
+            this.deserializedbutton.Name = "deserializedbutton";
+            this.deserializedbutton.Size = new System.Drawing.Size(140, 35);
+            this.deserializedbutton.TabIndex = 13;
+            this.deserializedbutton.Text = "DeSerialized";
+            this.deserializedbutton.UseVisualStyleBackColor = true;
+            this.deserializedbutton.Click += new System.EventHandler(this.deserializedbutton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.deserializedbutton);
             this.Controls.Add(this.Sonuclabel);
             this.Controls.Add(this.serializedbutton);
             this.Controls.Add(this.maastextBox);
@@ -180,5 +192,6 @@
         private TextBox maastextBox;
         private Button serializedbutton;
         private Label Sonuclabel;
+        private Button deserializedbutton;
     }
 }

@@ -33,6 +33,14 @@ namespace BinarySerializationOrnek
                     bf.Serialize(fsout, emp);
                     Sonuclabel.Text = "Bilgiler Serilize Edildi.";
                     Sonuclabel.Visible = true;
+
+                    AdtextBox.Text = "";
+                    telefontextBox.Text = "";
+                    //dateTimePicker1.Value = "";
+
+                    departmantextBox.Text = "";
+
+                    maastextBox.Text = "";
                 }
             }
 
@@ -43,6 +51,45 @@ namespace BinarySerializationOrnek
                 Sonuclabel.Visible = true;
             }
 
+        }
+
+        private void deserializedbutton_Click(object sender, EventArgs e)
+        {
+            Employee emp = new Employee();
+  
+
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream fsin = new FileStream("employee.binary", FileMode.Open, FileAccess.Read, FileShare.None);
+
+            try
+            {
+                using (fsin)
+                {
+                    emp = (Employee)bf.Deserialize(fsin);
+
+                    Sonuclabel.Text = "Object DeSerilize Edildi.";
+                    Sonuclabel.Visible = true;
+
+                    AdtextBox.Text = emp.Name;
+                    telefontextBox.Text = emp.Phone;
+                    dateTimePicker1.Value = emp.DoB;
+
+                    departmantextBox.Text = emp.Department;
+
+                    maastextBox.Text = Convert.ToString(emp.Salary);
+               
+
+
+
+                }
+            }
+
+            catch (Exception ex)
+            {
+                ex.Message.ToString();
+                Sonuclabel.Text = "Bir hata oluþtu";
+                Sonuclabel.Visible = true;
+            }
         }
     }
 }
